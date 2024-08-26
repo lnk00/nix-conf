@@ -1,0 +1,120 @@
+{
+  description = "Example Darwin system flake";
+
+  inputs = {
+    nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
+    nix-darwin.url = "github:LnL7/nix-darwin";
+    nix-darwin.inputs.nixpkgs.follows = "nixpkgs";
+    home-manager.url = "github:nix-community/home-manager";
+    home-manager.inputs.nixpkgs.follows = "nixpkgs";
+    alacritty-theme.url = "github:alexghr/alacritty-theme.nix";
+  };
+
+  outputs = inputs@{ self, nix-darwin, nixpkgs, home-manager, alacritty-theme }:
+  let
+    configuration = { config, lib, pkgs, ... }: {
+      # List packages installed in system profile. To search by name, run:
+      # $ nix-env -qaP | grep wget
+      environment.systemPackages =
+        [ 
+          pkgs.vim
+          pkgs.helix
+          pkgs.nil
+        ];
+
+      homebrew = {
+        enable = true;
+        casks = [
+          "font-geist"
+          "font-geist-mono-nerd-font"
+          "alacritty"
+          "nikitabobko/tap/aerospace"
+          "raycast"
+          "arc"
+          "microsoft-teams"
+          "slack"
+          "rider"
+          "objectivesharpie"
+        ];
+      };
+
+      nix.gc = {
+        automatic = true;
+        interval = { Day = 7; };
+        options = "--delete-older-than 30d";
+      };
+
+
+      # Auto upgrade nix package and the daemon service.
+      services.nix-daemon.enable = true;
+      # nix.package = pkgs.nix;
+
+      # Necessary for using flakes on this system.
+      nix.settings.experimental-features = "nix-command flakes";
+
+      nix.extraOptions = ''
+        extra-platforms = x86_64-darwin aarch64-darwin
+      '';
+
+      # Create /etc/zshrc that loads the nix-darwin environment.
+      programs.zsh.enable = true;
+
+      environment.shellAliases = {
+        nxsource = "darwin-rebuild switch --flake ~/.config/nix-darwin";
+        nxconf = "hx ~/.config/nix-darwin/flake.nix";
+        hmconf = "hx ~/.config/nix-darwin/home.nix";
+      };
+
+      # Set Git commit hash for darwin-version.
+      system.configurationRevision = self.rev or self.dirtyRev or null;
+
+      # Used for backwards compatibility, please read the changelog before changing.
+      # $ darwin-rebuild changelog
+      system.stateVersion = 4;
+
+      # The platform the configuration will be used on.
+      nixpkgs.hostPlatform = "aarch64-darwin";
+
+      system.defaults = {
+        dock.autohide = true;
+        dock.mru-spaces = false;
+        dock.minimize-to-application = true;
+        dock.orientation = "right";
+        dock.show-recents = false;
+        WindowManager.AutoHide = true;
+        finder.AppleShowAllExtensions = true;
+        finder.AppleShowAllFiles = true;
+        finder.FXPreferredViewStyle = "clmv";
+        finder.ShowPathbar = true;
+        NSGlobalDomain.AppleInterfaceStyle = "Dark";
+        NSGlobalDomain.KeyRepeat = 1;
+        dock.persistent-apps = [
+          "/Applications/Alacritty.app"
+        ];
+      };
+
+    };
+  in
+  {
+    # Build darwin flake using:
+    # $ darwin-rebuild build --flake .#lnk0s-Mac-mini
+    darwinConfigurations."lnk0s-Mac-mini" = nix-darwin.lib.darwinSystem {
+      modules = [
+        configuration
+        ({ config, pkgs, ...}: {
+          # install the overlay
+          nixpkgs.overlays = [ alacritty-theme.overlays.default ];
+        })
+        inputs.home-manager.darwinModules.home-manager
+          {
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+            home-manager.users.lnk0 = import ./home.nix;
+          }
+      ];
+    };
+
+    # Expose the package set, including overlays, for convenience.
+    darwinPackages = self.darwinConfigurations."lnk0s-Mac-mini".pkgs;
+  };
+}
