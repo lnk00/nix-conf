@@ -91,6 +91,7 @@
         NSGlobalDomain.KeyRepeat = 1;
         dock.persistent-apps = [
           "/Applications/Alacritty.app"
+          "/Applications/Arc.app"
         ];
       };
 

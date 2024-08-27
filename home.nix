@@ -10,15 +10,22 @@
   programs.home-manager.enable = true;
  
   home.packages = with pkgs; [
+    # Utils
     zoxide
     htop
     curl
     jq
     thefuck
+
+    # Tui
     gitui
+    yazi
+
+    # Technos
     cocoapods
     nodejs_18
-    yazi
+    go
+    gopls
   ];
 
   programs.git = {
