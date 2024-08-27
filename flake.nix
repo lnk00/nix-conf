@@ -35,6 +35,7 @@
           "slack"
           "rider"
           "objectivesharpie"
+          "vlc"
         ];
       };
 
