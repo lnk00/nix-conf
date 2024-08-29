@@ -1,4 +1,6 @@
 { pkgs, lib, config, ... }:
+
+
  
 {
 
@@ -8,7 +10,7 @@
   home.stateVersion = "24.05";
 
   programs.home-manager.enable = true;
- 
+
   home.packages = with pkgs; [
     # Utils
     zoxide
@@ -21,11 +23,20 @@
     gitui
     yazi
 
-    # Technos
+    # Swift
     cocoapods
+
+    # Nodejs
     nodejs_18
+    nodePackages.typescript
+    nodePackages.typescript-language-server
+
+    # Go
     go
     gopls
+
+    # Dotnet
+    dotnet-sdk_7
   ];
 
   programs.git = {
