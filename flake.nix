@@ -36,6 +36,7 @@
           "rider"
           "objectivesharpie"
           "vlc"
+          "linearmouse"
         ];
       };
 

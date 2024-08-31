@@ -63,6 +63,20 @@
 
   programs.helix = {
     enable = true;
+    languages = {
+    language = [
+      {
+        name = "typescript";
+        auto-format = true;
+        formatter = { command = "prettier"; args = ["--parser" "typescript"]; };
+      }
+      {
+        name = "nix";
+        auto-format = true;
+        formatter = { command = "nixpkgs-fmt"; };
+      }
+    ];
+  };
     settings = {
       theme = "tokyonight-custom";
       editor = {
