@@ -16,6 +16,7 @@
     zoxide
     htop
     curl
+    httpie
     jq
     thefuck
 
@@ -27,9 +28,12 @@
     cocoapods
 
     # Nodejs
-    nodejs_18
+    nodejs_22
     nodePackages.typescript
+    nodePackages.prettier
     nodePackages.typescript-language-server
+    nodePackages.vscode-langservers-extracted
+    nodePackages."@tailwindcss/language-server"
 
     # Go
     go
@@ -63,20 +67,6 @@
 
   programs.helix = {
     enable = true;
-    languages = {
-    language = [
-      {
-        name = "typescript";
-        auto-format = true;
-        formatter = { command = "prettier"; args = ["--parser" "typescript"]; };
-      }
-      {
-        name = "nix";
-        auto-format = true;
-        formatter = { command = "nixpkgs-fmt"; };
-      }
-    ];
-  };
     settings = {
       theme = "tokyonight-custom";
       editor = {
@@ -222,6 +212,78 @@
       alt-4 = 'workspace 4'
 
       alt-tab = 'workspace-back-and-forth'
+    '';
+  };
+
+  home.file."${config.xdg.configHome}/helix/languages.toml" = {
+    text = ''
+    [language-server]
+    tailwindcss-ls = { command = "tailwindcss-language-server", args = [ "--stdio" ] }
+
+    [language-server.eslint]
+    command = "vscode-eslint-language-server"
+    args = ["--stdio"]
+
+    [language-server.eslint.config]
+    codeActionsOnSave = { mode = "all", "source.fixAll.eslint" = true }
+    format = { enable = true }
+    nodePath = ""
+    quiet = false
+    rulesCustomizations = []
+    run = "onType"
+    validate = "on"
+    experimental = {}
+    problems = { shortenToSingleLine = false }
+
+    [language-server.eslint.config.codeAction]
+    disableRuleComment = { enable = true, location = "separateLine" }
+    showDocumentation = { enable = false }
+
+    [language-server.vscode-json-language-server.config]
+    json = { validate = { enable = true }, format = { enable = true } }
+    provideFormatter = true
+
+    [language-server.vscode-css-language-server.config]
+    css = { validate = { enable = true } }
+    scss = { validate = { enable = true } }
+    less = { validate = { enable = true } }
+    provideFormatter = true
+
+
+    [[language]]
+    name = "typescript"
+    language-servers = [ "typescript-language-server", "eslint" ]
+    formatter = { command = "prettier", args = [ "--parser", "typescript" ] }
+    auto-format = true
+
+    [[language]]
+    name = "tsx"
+    language-servers = [ "typescript-language-server", "eslint", "tailwindcss-ls" ]
+    formatter = { command = "prettier", args = [ "--parser", "typescript" ] }
+    auto-format = true
+
+    [[language]]
+    name = "javascript"
+    language-servers = [ "typescript-language-server", "eslint"]
+    formatter = { command = "prettier", args = [ "--parser", "typescript" ] }
+    auto-format = true
+
+    [[language]]
+    name = "jsx"
+    language-servers = [ "typescript-language-server", "eslint", "emmet-ls", "tailwindcss-ls" ]
+    formatter = { command = "prettier", args = [ "--parser", "typescript" ] }
+    auto-format = true
+
+    [[language]]
+    name = "json"
+    formatter = { command = "prettier", args = [ "--parser", "json" ] }
+    auto-format = true
+
+    [[language]]
+    name = "css"
+    language-servers = [ "vscode-css-language-server", "tailwindcss-ls" ]
+    formatter = { command = "prettier", args = ["--parser", "css"] }
+    auto-format = true
     '';
   };
 }
