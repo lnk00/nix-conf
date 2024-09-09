@@ -11,6 +11,10 @@
 
   programs.home-manager.enable = true;
 
+  home.sessionPath = [
+    "$HOME/.cargo/bin"
+  ];
+
   home.packages = with pkgs; [
     # Utils
     zoxide
@@ -41,6 +45,9 @@
 
     # Dotnet
     dotnet-sdk_7
+
+    # Rust
+    rustup
   ];
 
   programs.git = {
