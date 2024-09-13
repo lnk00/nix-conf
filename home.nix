@@ -23,6 +23,7 @@
     httpie
     jq
     thefuck
+    bitwarden-cli
 
     # Tui
     gitui
