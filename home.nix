@@ -114,15 +114,11 @@
     themes = {
       tokyonight-custom = let
         bg = "transaparent";
-        fg = "#c0caf5";
-        fg-dark = "#a9b1d6";
       in {
-        "inherits" = "tokyonight";
+        "inherits" = "github_light";
         "ui.background" = { bg = bg; };
-        "ui.text" = { bg = bg; fg = fg; };
-        "ui.statusline" = { bg = bg; fg = fg-dark; };
-        "ui.cursor" = { bg = "#c0caf5"; fg = "#1a1b26"; };
-        "ui.cursor.match" = { fg = "#ff9e64"; modifiers = ["bold"]; };
+        "ui.statusline" = { bg = bg; };
+        "ui.cursor" = { bg = "#1f2328"; fg = "#ffffff"; };
       };
     };
   };
@@ -171,9 +167,9 @@
 
 
     settings = {
-      import = [ pkgs.alacritty-theme.tokyo-night ];
+      import = [ pkgs.alacritty-theme.github_light ];
       window.decorations = "Buttonless";
-      window.opacity = 0.8;
+      window.opacity = 0.7;
       window.blur = true;
       window.padding = {
 				x = 24;
