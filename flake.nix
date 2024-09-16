@@ -37,6 +37,7 @@
           "objectivesharpie"
           "vlc"
           "linearmouse"
+          "blender"
         ];
       };
 
@@ -88,7 +89,6 @@
         finder.AppleShowAllFiles = true;
         finder.FXPreferredViewStyle = "clmv";
         finder.ShowPathbar = true;
-        NSGlobalDomain.AppleInterfaceStyle = "Dark";
         NSGlobalDomain.KeyRepeat = 1;
         dock.persistent-apps = [
           "/Applications/Alacritty.app"
