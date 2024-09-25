@@ -34,11 +34,15 @@
 
     # Nodejs
     nodejs_22
+    nodePackages.yarn
     nodePackages.typescript
     nodePackages.prettier
     nodePackages.typescript-language-server
     nodePackages.vscode-langservers-extracted
     nodePackages."@tailwindcss/language-server"
+
+    # Bun
+    bun
 
     # Go
     go
