@@ -24,6 +24,7 @@
     jq
     thefuck
     bitwarden-cli
+    jankyborders
 
     # Tui
     gitui
@@ -170,7 +171,6 @@
   programs.alacritty = {
     enable = true;
 
-
     settings = {
       import = [ pkgs.alacritty-theme.github_light ];
       window.decorations = "Buttonless";
@@ -192,6 +192,8 @@
 
   home.file."${config.xdg.configHome}/aerospace/aerospace.toml" = {
     text = ''
+      start-at-login = true
+
       [gaps]
       inner.horizontal = 12
       inner.vertical =   12
@@ -220,6 +222,7 @@
       alt-4 = 'workspace 4'
 
       alt-tab = 'workspace-back-and-forth'
+      
     '';
   };
 
