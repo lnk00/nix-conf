@@ -53,7 +53,7 @@
       # nix.package = pkgs.nix;
 
       services.jankyborders.enable = true;
-      services.jankyborders.active_color = "0xFF0598BC";
+      services.jankyborders.active_color = "0xFF0266D6";
       services.jankyborders.hidpi = true;
       services.jankyborders.blur_radius = 5.0;
 
