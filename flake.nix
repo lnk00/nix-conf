@@ -38,7 +38,6 @@
           "vlc"
           "linearmouse"
           "blender"
-          "rize"
         ];
       };
 
