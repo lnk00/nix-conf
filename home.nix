@@ -175,7 +175,7 @@
 				y = 24;
 			};
       font = {
-        size = 15.0;
+        size = 16.0;
         normal.family = "GeistMono Nerd Font Mono";
         bold.family = "GeistMono Nerd Font Mono";
         italic.family = "GeistMono Nerd Font Mono";
