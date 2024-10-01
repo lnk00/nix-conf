@@ -69,7 +69,7 @@
       programs.zsh.enable = true;
 
       environment.shellAliases = {
-        nxsource = "darwin-rebuild switch --flake ~/.config/nix-darwin";
+        nxsource = "darwin-rebuild switch --flake ~/.config/nix-darwin --impure";
         nxconf = "hx ~/.config/nix-darwin/flake.nix";
         hmconf = "hx ~/.config/nix-darwin/home.nix";
       };

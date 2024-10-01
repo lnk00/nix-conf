@@ -25,6 +25,7 @@
     thefuck
     bitwarden-cli
     jankyborders
+    oh-my-posh
 
     # Tui
     gitui
@@ -76,6 +77,11 @@
   programs.yazi = {
     enable = true;
     enableZshIntegration = true;
+  };
+
+  programs.oh-my-posh = {
+    enable = true;
+    settings = builtins.fromJSON (builtins.unsafeDiscardStringContext (builtins.readFile "${config.xdg.configHome}/nix-darwin/config_files/prompt.json"));
   };
 
   programs.helix = {
@@ -139,18 +145,8 @@
       enable = true;
       plugins = [
         { name = "zsh-users/zsh-autosuggestions"; }
-        { name = "romkatv/powerlevel10k"; tags = [ "as:theme" "depth:1" ]; }
       ];
     };
-
-    plugins = [
-      {
-        name = "powerlevel10k-config";
-        src = lib.cleanSource ./config_files;
-        file = "p10k.zsh";
-      }
-    ];
-      
 
     oh-my-zsh = {
       enable = true;
@@ -162,9 +158,7 @@
       ff = "yazi .";
     };
 
-    localVariables = {
-      POWERLEVEL9K_DISABLE_CONFIGURATION_WIZARD = true;
-    };
+    localVariables = {};
   };
 
 
