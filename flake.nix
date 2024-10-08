@@ -28,6 +28,7 @@
           "font-geist"
           "font-geist-mono-nerd-font"
           "alacritty"
+          "wezterm"
           "nikitabobko/tap/aerospace"
           "raycast"
           "arc"

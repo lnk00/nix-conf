@@ -183,6 +183,13 @@
     };
   };
 
+  programs.wezterm = {
+    enable = true;
+    enableZshIntegration = true;
+    enableBashIntegration = true;
+    extraConfig = builtins.readFile "${config.xdg.configHome}/nix-darwin/config_files/wezterm.lua";
+  };
+
 
   home.file."${config.xdg.configHome}/aerospace/aerospace.toml" = {
     text = ''
