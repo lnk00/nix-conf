@@ -54,10 +54,10 @@ config.colors = {
 config.font = wezterm.font('GeistMono Nerd Font Mono', { weight = 'Bold' })
 config.font_size = 15.0
 config.window_padding = {
-  left = 24,
-  right = 24,
-  top = 24,
-  bottom = 24,
+  left = 12,
+  right = 12,
+  top = 12,
+  bottom = 12,
 }
 
 config.keys = {
