@@ -31,7 +31,6 @@
           "wezterm"
           "nikitabobko/tap/aerospace"
           "raycast"
-          "arc"
           "microsoft-teams"
           "slack"
           "rider"
@@ -97,10 +96,7 @@
         finder.FXPreferredViewStyle = "clmv";
         finder.ShowPathbar = true;
         NSGlobalDomain.KeyRepeat = 1;
-        dock.persistent-apps = [
-          "/Applications/Alacritty.app"
-          "/Applications/Arc.app"
-        ];
+        dock.persistent-apps = [];
       };
 
     };
