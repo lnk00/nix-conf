@@ -4,11 +4,27 @@ local wezterm = require 'wezterm'
 -- This will hold the configuration.
 local config = wezterm.config_builder()
 
+local nordlight = wezterm.color.get_builtin_schemes()['nord-light']
+nordlight.ansi = {
+  "#3b4252",
+  "#bf616a",
+  "#3B4252",
+  "#ebcb8b",
+  "#81a1c1",
+  "#b48ead",
+  "#88c0d0",
+  "#d8dee9"
+}
+
 -- This is where you actually apply your config choices
-config.color_scheme = 'Github (base16)'
+config.color_schemes = {
+  ['custom-nord-light'] = nordlight,
+}
+config.color_scheme = "custom-nord-light"
+-- config.color_scheme = 'NordLight (Gogh)'
 config.use_fancy_tab_bar = false
 config.window_decorations = "RESIZE"
-config.window_background_opacity = 0.6
+config.window_background_opacity = 0.8
 config.macos_window_background_blur = 30
 config.enable_tab_bar = false
 config.tab_bar_at_bottom = true

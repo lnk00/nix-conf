@@ -87,7 +87,7 @@
   programs.helix = {
     enable = true;
     settings = {
-      theme = "tokyonight-custom";
+      theme = "nord_light_custom";
       editor = {
         line-number = "relative";
         lsp.display-messages = true;
@@ -124,13 +124,12 @@
       };
     };
     themes = {
-      tokyonight-custom = let
+      nord_light_custom = let
         bg = "transaparent";
       in {
-        "inherits" = "github_light";
+        "inherits" = "nord_light";
         "ui.background" = { bg = bg; };
         "ui.statusline" = { bg = bg; };
-        "ui.cursor" = { bg = "#1f2328"; fg = "#ffffff"; };
       };
     };
   };
