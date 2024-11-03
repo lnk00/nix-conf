@@ -1,6 +1,4 @@
 { pkgs, lib, config, ... }:
-
-
  
 {
 
@@ -26,10 +24,12 @@
     bitwarden-cli
     jankyborders
     oh-my-posh
+    exercism
 
     # Tui
     gitui
     yazi
+    glow
 
     # Swift
     cocoapods
@@ -55,6 +55,11 @@
 
     # Rust
     rustup
+
+    #Elixir
+    erlang
+    elixir
+    elixir-ls
   ];
 
   programs.git = {
@@ -87,7 +92,7 @@
   programs.helix = {
     enable = true;
     settings = {
-      theme = "nord_light_custom";
+      theme = "custom_theme";
       editor = {
         line-number = "relative";
         lsp.display-messages = true;
@@ -124,12 +129,16 @@
       };
     };
     themes = {
-      nord_light_custom = let
+      custom_theme = let
         bg = "transaparent";
+        constant = "#AE7FA8";
       in {
-        "inherits" = "nord_light";
+        "inherits" = "term16_light";
         "ui.background" = { bg = bg; };
         "ui.statusline" = { bg = bg; };
+        "constant" = { fg = constant; };
+        "constant.numeric" = { fg = constant; };
+        "attribute" = { fg = constant; };
       };
     };
   };
@@ -294,6 +303,11 @@
     name = "css"
     language-servers = [ "vscode-css-language-server", "tailwindcss-ls" ]
     formatter = { command = "prettier", args = ["--parser", "css"] }
+    auto-format = true
+    
+    [[language]]
+    name = "elixir"
+    language-servers = ["elixir-ls"]
     auto-format = true
     '';
   };

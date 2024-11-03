@@ -59,7 +59,6 @@
       services.jankyborders.hidpi = true;
       services.jankyborders.blur_radius = 5.0;
 
-
       # Necessary for using flakes on this system.
       nix.settings.experimental-features = "nix-command flakes";
 
