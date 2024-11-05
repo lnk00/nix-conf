@@ -239,6 +239,7 @@
     text = ''
     [language-server]
     tailwindcss-ls = { command = "tailwindcss-language-server", args = [ "--stdio" ] }
+    html-ls = { command = "vscode-html-language-server", args = [ "--stdio" ] }
 
     [language-server.eslint]
     command = "vscode-eslint-language-server"
@@ -290,7 +291,7 @@
 
     [[language]]
     name = "jsx"
-    language-servers = [ "typescript-language-server", "eslint", "emmet-ls", "tailwindcss-ls" ]
+    language-servers = [ "typescript-language-server", "eslint", "tailwindcss-ls" ]
     formatter = { command = "prettier", args = [ "--parser", "typescript" ] }
     auto-format = true
 
@@ -304,10 +305,11 @@
     language-servers = [ "vscode-css-language-server", "tailwindcss-ls" ]
     formatter = { command = "prettier", args = ["--parser", "css"] }
     auto-format = true
-    
+
     [[language]]
     name = "elixir"
-    language-servers = ["elixir-ls"]
+    file-types = ["ex", "exs", "heex"]
+    language-servers = ["elixir-ls", "tailwindcss-ls", "html-ls"]
     auto-format = true
     '';
   };
