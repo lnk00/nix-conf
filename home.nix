@@ -237,6 +237,10 @@
 
   home.file."${config.xdg.configHome}/helix/languages.toml" = {
     text = ''
+    [[grammar]]
+    name = "heex"
+    source = { git = "https://github.com/phoenixframework/tree-sitter-heex.git" }
+    
     [language-server]
     tailwindcss-ls = { command = "tailwindcss-language-server", args = [ "--stdio" ] }
     html-ls = { command = "vscode-html-language-server", args = [ "--stdio" ] }
@@ -269,7 +273,6 @@
     scss = { validate = { enable = true } }
     less = { validate = { enable = true } }
     provideFormatter = true
-
 
     [[language]]
     name = "typescript"
@@ -308,8 +311,14 @@
 
     [[language]]
     name = "elixir"
-    file-types = ["ex", "exs", "heex"]
+    file-types = ["ex", "exs"]
     language-servers = ["elixir-ls", "tailwindcss-ls", "html-ls"]
+    auto-format = true
+
+    [[language]]
+    name = "heex"
+    file-types = ["heex", "neex"]
+    language-servers = ["elixir-ls", "html-ls"]
     auto-format = true
     '';
   };
