@@ -25,6 +25,7 @@
     jankyborders
     oh-my-posh
     exercism
+    flyctl
 
     # Tui
     gitui
