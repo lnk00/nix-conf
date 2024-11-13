@@ -37,7 +37,6 @@
           "objectivesharpie"
           "vlc"
           "linearmouse"
-          "blender"
           "proxyman"
         ];
       };

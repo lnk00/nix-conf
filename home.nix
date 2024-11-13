@@ -31,6 +31,7 @@
     gitui
     yazi
     glow
+    gobang
 
     # Swift
     cocoapods
