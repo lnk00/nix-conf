@@ -1,5 +1,5 @@
 { pkgs, lib, config, ... }:
- 
+
 {
 
   home.username = "lnk0";
@@ -27,6 +27,7 @@
     exercism
     flyctl
     aichat
+    pipx
 
     # Tui
     gitui
