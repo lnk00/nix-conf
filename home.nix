@@ -26,6 +26,7 @@
     oh-my-posh
     exercism
     flyctl
+    aichat
 
     # Tui
     gitui
