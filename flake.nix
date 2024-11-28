@@ -27,6 +27,9 @@
         casks = [
           "font-geist"
           "font-geist-mono-nerd-font"
+          "font-hack-nerd-font"
+          "font-sf-pro"
+          "sf-symbols"
           "alacritty"
           "wezterm"
           "nikitabobko/tap/aerospace"
@@ -58,6 +61,8 @@
       services.jankyborders.hidpi = true;
       services.jankyborders.blur_radius = 5.0;
 
+      services.sketchybar.enable = true;
+
       # Necessary for using flakes on this system.
       nix.settings.experimental-features = "nix-command flakes";
 
@@ -69,7 +74,7 @@
       programs.zsh.enable = true;
 
       environment.shellAliases = {
-        nxsource = "darwin-rebuild switch --flake ~/.config/nix-darwin --impure";
+        nxsource = "darwin-rebuild switch --flake ~/.config/nix-darwin --impure && sketchybar --reload ~/.config/sketchybar/sketchybarrc";
         nxconf = "hx ~/.config/nix-darwin/flake.nix";
         nxpush = "cd ~/.config/nix-darwin && git add . && git commit -m 'update' && git push";
         hmconf = "hx ~/.config/nix-darwin/home.nix";
