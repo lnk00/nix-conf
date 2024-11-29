@@ -236,7 +236,15 @@
       alt-3 = 'workspace 3'
       alt-4 = 'workspace 4'
 
+      alt-shift-1 = 'move-node-to-workspace 1'
+      alt-shift-2 = 'move-node-to-workspace 2'
+      alt-shift-3 = 'move-node-to-workspace 3'
+      alt-shift-4 = 'move-node-to-workspace 4'
+
       alt-tab = 'workspace-back-and-forth'
+
+      alt-comma = 'layout accordion horizontal vertical'
+      alt-slash = 'layout tiles horizontal vertical'
 
       
     '';
