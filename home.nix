@@ -358,7 +358,8 @@
                 background.color=0xff3B4252 \
                 background.corner_radius=5 \
                 background.height=30 \
-                background.drawing=off \
+                background.drawing=on \
+                background.color=0x003B4252 \
                 label.color=0xff3B4252 \
                 label.font.size=14.0 \
                 label="$sid" \
@@ -375,25 +376,25 @@
       #!/usr/bin/env zsh
 
       if [ $1 -eq 1 ]; then
-        sketchybar --set "space.1" background.drawing=on label.color=0xffffffff
-        sketchybar --set "space.2" background.drawing=off label.color=0xff3B4252
-        sketchybar --set "space.3" background.drawing=off label.color=0xff3B4252
-        sketchybar --set "space.4" background.drawing=off label.color=0xff3B4252
+        sketchybar --set "space.1" background.color=0xff3B4252 label.color=0xffffffff
+        sketchybar --set "space.2" background.color=0x003B4252 label.color=0xff3B4252
+        sketchybar --set "space.3" background.color=0x003B4252 label.color=0xff3B4252
+        sketchybar --set "space.4" background.color=0x003B4252 label.color=0xff3B4252
       elif [ $1 -eq 2 ]; then
-        sketchybar --set "space.1" background.drawing=off label.color=0xff3B4252
-        sketchybar --set "space.2" background.drawing=on label.color=0xffffffff
-        sketchybar --set "space.3" background.drawing=off label.color=0xff3B4252
-        sketchybar --set "space.4" background.drawing=off label.color=0xff3B4252
+        sketchybar --set "space.1" background.color=0x003B4252 label.color=0xff3B4252
+        sketchybar --set "space.2" background.color=0xff3B4252 label.color=0xffffffff
+        sketchybar --set "space.3" background.color=0x003B4252 label.color=0xff3B4252
+        sketchybar --set "space.4" background.color=0x003B4252 label.color=0xff3B4252
       elif [ $1 -eq 3 ]; then
-        sketchybar --set "space.1" background.drawing=off label.color=0xff3B4252
-        sketchybar --set "space.2" background.drawing=off label.color=0xff3B4252
-        sketchybar --set "space.3" background.drawing=on label.color=0xffffffff
-        sketchybar --set "space.4" background.drawing=off label.color=0xff3B4252
+        sketchybar --set "space.1" background.color=0x003B4252 label.color=0xff3B4252
+        sketchybar --set "space.2" background.color=0x003B4252 label.color=0xff3B4252
+        sketchybar --set "space.3" background.color=0xff3B4252 label.color=0xffffffff
+        sketchybar --set "space.4" background.color=0x003B4252 label.color=0xff3B4252
       else
-        sketchybar --set "space.1" background.drawing=off label.color=0xff3B4252
-        sketchybar --set "space.2" background.drawing=off label.color=0xff3B4252
-        sketchybar --set "space.3" background.drawing=off label.color=0xff3B4252
-        sketchybar --set "space.4" background.drawing=on label.color=0xffffffff
+        sketchybar --set "space.1" background.color=0x003B4252 label.color=0xff3B4252
+        sketchybar --set "space.2" background.color=0x003B4252 label.color=0xff3B4252
+        sketchybar --set "space.3" background.color=0x003B4252 label.color=0xff3B4252
+        sketchybar --set "space.4" background.color=0xff3B4252 label.color=0xffffffff
       fi
     '';
   };
