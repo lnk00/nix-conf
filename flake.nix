@@ -41,6 +41,7 @@
           "vlc"
           "linearmouse"
           "proxyman"
+          "zed"
         ];
       };
 
