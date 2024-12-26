@@ -54,9 +54,6 @@
     go
     gopls
 
-    # Dotnet
-    dotnet-sdk_7
-
     # Rust
     rustup
 
