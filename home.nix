@@ -132,14 +132,10 @@
     themes = {
       custom_theme = let
         bg = "transaparent";
-        constant = "#AE7FA8";
       in {
-        "inherits" = "term16_light";
+        "inherits" = "rose_pine";
         "ui.background" = { bg = bg; };
         "ui.statusline" = { bg = bg; };
-        "constant" = { fg = constant; };
-        "constant.numeric" = { fg = constant; };
-        "attribute" = { fg = constant; };
       };
     };
   };
@@ -343,7 +339,7 @@
 
         # Setting up the general bar appearance and default values
         sketchybar --bar     height=50                                         \
-                             color=0x66ffffff                                  \
+                             color=0xcc191724                                  \
                              position=left                                     \
                              sticky=on                                         \
                              corner_radius=8                                   \
@@ -360,11 +356,10 @@
         for sid in $(/Users/lnk0/.local/bin/aerospace list-workspaces --all); do
             sketchybar --add item space."$sid" center \
                 --set space."$sid" \
-                background.color=0xff3B4252 \
-                background.corner_radius=5 \
+                background.corner_radius=100 \
                 background.height=30 \
                 background.drawing=on \
-                background.color=0x003B4252 \
+                background.color=0x00C4A7E7 \
                 label.color=0xff3B4252 \
                 label.font.size=14.0 \
                 label="$sid" \
@@ -381,25 +376,25 @@
       #!/usr/bin/env zsh
 
       if [ $1 -eq 1 ]; then
-        sketchybar --set "space.1" background.color=0xff3B4252 label.color=0xffffffff
-        sketchybar --set "space.2" background.color=0x003B4252 label.color=0xff3B4252
-        sketchybar --set "space.3" background.color=0x003B4252 label.color=0xff3B4252
-        sketchybar --set "space.4" background.color=0x003B4252 label.color=0xff3B4252
+        sketchybar --set "space.1" background.color=0xffC4A7E7 label.color=0xffffffff
+        sketchybar --set "space.2" background.color=0x00C4A7E7 label.color=0xffC4A7E7
+        sketchybar --set "space.3" background.color=0x00C4A7E7 label.color=0xffC4A7E7
+        sketchybar --set "space.4" background.color=0x00C4A7E7 label.color=0xffC4A7E7
       elif [ $1 -eq 2 ]; then
-        sketchybar --set "space.1" background.color=0x003B4252 label.color=0xff3B4252
-        sketchybar --set "space.2" background.color=0xff3B4252 label.color=0xffffffff
-        sketchybar --set "space.3" background.color=0x003B4252 label.color=0xff3B4252
-        sketchybar --set "space.4" background.color=0x003B4252 label.color=0xff3B4252
+        sketchybar --set "space.1" background.color=0x00C4A7E7 label.color=0xffC4A7E7
+        sketchybar --set "space.2" background.color=0xffC4A7E7 label.color=0xffffffff
+        sketchybar --set "space.3" background.color=0x00C4A7E7 label.color=0xffC4A7E7
+        sketchybar --set "space.4" background.color=0x00C4A7E7 label.color=0xffC4A7E7
       elif [ $1 -eq 3 ]; then
-        sketchybar --set "space.1" background.color=0x003B4252 label.color=0xff3B4252
-        sketchybar --set "space.2" background.color=0x003B4252 label.color=0xff3B4252
-        sketchybar --set "space.3" background.color=0xff3B4252 label.color=0xffffffff
-        sketchybar --set "space.4" background.color=0x003B4252 label.color=0xff3B4252
+        sketchybar --set "space.1" background.color=0x00C4A7E7 label.color=0xffC4A7E7
+        sketchybar --set "space.2" background.color=0x00C4A7E7 label.color=0xffC4A7E7
+        sketchybar --set "space.3" background.color=0xffC4A7E7 label.color=0xffffffff
+        sketchybar --set "space.4" background.color=0x00C4A7E7 label.color=0xffC4A7E7
       else
-        sketchybar --set "space.1" background.color=0x003B4252 label.color=0xff3B4252
-        sketchybar --set "space.2" background.color=0x003B4252 label.color=0xff3B4252
-        sketchybar --set "space.3" background.color=0x003B4252 label.color=0xff3B4252
-        sketchybar --set "space.4" background.color=0xff3B4252 label.color=0xffffffff
+        sketchybar --set "space.1" background.color=0x00C4A7E7 label.color=0xffC4A7E7
+        sketchybar --set "space.2" background.color=0x00C4A7E7 label.color=0xffC4A7E7
+        sketchybar --set "space.3" background.color=0x00C4A7E7 label.color=0xffC4A7E7
+        sketchybar --set "space.4" background.color=0xffC4A7E7 label.color=0xffffffff
       fi
     '';
   };

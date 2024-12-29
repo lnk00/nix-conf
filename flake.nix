@@ -57,7 +57,7 @@
       # nix.package = pkgs.nix;
 
       services.jankyborders.enable = true;
-      services.jankyborders.active_color = "0xFFFFFFFF";
+      services.jankyborders.active_color = "0xFFC4A7E7";
       services.jankyborders.inactive_color = "0x00FFFFFF";
       services.jankyborders.hidpi = true;
       services.jankyborders.blur_radius = 5.0;
@@ -103,6 +103,7 @@
         finder.FXPreferredViewStyle = "clmv";
         finder.ShowPathbar = true;
         NSGlobalDomain.KeyRepeat = 1;
+        NSGlobalDomain.AppleInterfaceStyle = "Dark";
         dock.persistent-apps = [];
       };
 
