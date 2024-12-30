@@ -239,6 +239,9 @@
       alt-comma = 'layout accordion horizontal vertical'
       alt-slash = 'layout tiles horizontal vertical'
 
+      [[on-window-detected]]
+      if.app-id = 'com.apple.iphonesimulator'
+      run = 'layout floating'
       
     '';
   };
