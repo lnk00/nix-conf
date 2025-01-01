@@ -205,7 +205,7 @@
       [gaps]
       inner.horizontal = 12
       inner.vertical =   12
-      outer.left =       74
+      outer.left =       12
       outer.bottom =     12
       outer.top =        12
       outer.right =      12
@@ -338,36 +338,36 @@
     executable = true;
     text = ''
 
-        PADDINGS=10
+        # PADDINGS=10
 
-        # Setting up the general bar appearance and default values
-        sketchybar --bar     height=50                                         \
-                             color=0xcc191724                                  \
-                             position=left                                     \
-                             sticky=on                                         \
-                             corner_radius=8                                   \
-                             y_offset=10                                       \
-                             margin=12                                 \
-                             blur_radius=30                                    \
-                                                                               \
-                   --default updates=when_shown                                \
-                             background.padding_right=$PADDINGS                \
-                             background.padding_left=$PADDINGS                 \
-                             label.padding_right=10                \
-                             label.padding_left=10
+        # # Setting up the general bar appearance and default values
+        # sketchybar --bar     height=50                                         \
+        #                      color=0xcc191724                                  \
+        #                      position=left                                     \
+        #                      sticky=on                                         \
+        #                      corner_radius=8                                   \
+        #                      y_offset=10                                       \
+        #                      margin=12                                 \
+        #                      blur_radius=30                                    \
+        #                                                                        \
+        #            --default updates=when_shown                                \
+        #                      background.padding_right=$PADDINGS                \
+        #                      background.padding_left=$PADDINGS                 \
+        #                      label.padding_right=10                \
+        #                      label.padding_left=10
 
-        for sid in $(/Users/lnk0/.local/bin/aerospace list-workspaces --all); do
-            sketchybar --add item space."$sid" center \
-                --set space."$sid" \
-                background.corner_radius=100 \
-                background.height=30 \
-                background.drawing=on \
-                background.color=0x00C4A7E7 \
-                label.color=0xff3B4252 \
-                label.font.size=14.0 \
-                label="$sid" \
-                click_script="/Users/lnk0/.local/bin/aerospace workspace $sid"
-        done        
+        # for sid in $(/Users/lnk0/.local/bin/aerospace list-workspaces --all); do
+        #     sketchybar --add item space."$sid" center \
+        #         --set space."$sid" \
+        #         background.corner_radius=100 \
+        #         background.height=30 \
+        #         background.drawing=on \
+        #         background.color=0x00C4A7E7 \
+        #         label.color=0xff3B4252 \
+        #         label.font.size=14.0 \
+        #         label="$sid" \
+        #         click_script="/Users/lnk0/.local/bin/aerospace workspace $sid"
+        # done        
 
         sketchybar --update
     '';
