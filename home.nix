@@ -38,6 +38,9 @@
     # Swift
     cocoapods
 
+    # Java
+    jdk11
+
     # Nodejs
     nodejs_22
     nodePackages.yarn

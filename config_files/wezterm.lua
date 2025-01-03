@@ -8,7 +8,7 @@ local config = wezterm.config_builder()
 config.color_scheme = "rose-pine"
 config.use_fancy_tab_bar = false
 config.window_decorations = "RESIZE"
-config.window_background_opacity = 0.7
+config.window_background_opacity = 1
 config.macos_window_background_blur = 60
 config.enable_tab_bar = false
 config.font = wezterm.font('GeistMono Nerd Font Mono', { weight = 'Bold' })
