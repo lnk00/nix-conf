@@ -170,27 +170,6 @@
   };
 
 
-  programs.alacritty = {
-    enable = true;
-
-    settings = {
-      import = [ pkgs.alacritty-theme.github_light ];
-      window.decorations = "Buttonless";
-      window.opacity = 0.7;
-      window.blur = true;
-      window.padding = {
-				x = 24;
-				y = 24;
-			};
-      font = {
-        size = 15.0;
-        normal.family = "GeistMono Nerd Font Mono";
-        bold.family = "GeistMono Nerd Font Mono";
-        italic.family = "GeistMono Nerd Font Mono";
-      };
-    };
-  };
-
   programs.wezterm = {
     enable = true;
     enableZshIntegration = true;

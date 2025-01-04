@@ -7,10 +7,9 @@
     nix-darwin.inputs.nixpkgs.follows = "nixpkgs";
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
-    alacritty-theme.url = "github:alexghr/alacritty-theme.nix";
   };
 
-  outputs = inputs@{ self, nix-darwin, nixpkgs, home-manager, alacritty-theme }:
+  outputs = inputs@{ self, nix-darwin, nixpkgs, home-manager }:
   let
     configuration = { config, lib, pkgs, ... }: {
       # List packages installed in system profile. To search by name, run:
@@ -30,7 +29,6 @@
           "font-hack-nerd-font"
           "font-sf-pro"
           "sf-symbols"
-          "alacritty"
           "wezterm"
           "nikitabobko/tap/aerospace"
           "raycast"
@@ -117,7 +115,6 @@
         configuration
         ({ config, pkgs, ...}: {
           # install the overlay
-          nixpkgs.overlays = [ alacritty-theme.overlays.default ];
         })
         inputs.home-manager.darwinModules.home-manager
           {
