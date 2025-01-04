@@ -182,8 +182,6 @@
     text = ''
       start-at-login = true
 
-      exec-on-workspace-change = ['/bin/zsh', '-c', '/Users/lnk0/.config/sketchybar/plugins/aerospace.sh $(/Users/lnk0/.local/bin/aerospace list-workspaces --focused)']
-
       [gaps]
       inner.horizontal = 12
       inner.vertical =   12
@@ -313,74 +311,6 @@
     file-types = ["heex", "neex"]
     language-servers = ["elixir-ls", "html-ls"]
     auto-format = true
-    '';
-  };
-
-  home.file."${config.xdg.configHome}/sketchybar/sketchybarrc" = {
-    executable = true;
-    text = ''
-
-        # PADDINGS=10
-
-        # # Setting up the general bar appearance and default values
-        # sketchybar --bar     height=50                                         \
-        #                      color=0xcc191724                                  \
-        #                      position=left                                     \
-        #                      sticky=on                                         \
-        #                      corner_radius=8                                   \
-        #                      y_offset=10                                       \
-        #                      margin=12                                 \
-        #                      blur_radius=30                                    \
-        #                                                                        \
-        #            --default updates=when_shown                                \
-        #                      background.padding_right=$PADDINGS                \
-        #                      background.padding_left=$PADDINGS                 \
-        #                      label.padding_right=10                \
-        #                      label.padding_left=10
-
-        # for sid in $(/Users/lnk0/.local/bin/aerospace list-workspaces --all); do
-        #     sketchybar --add item space."$sid" center \
-        #         --set space."$sid" \
-        #         background.corner_radius=100 \
-        #         background.height=30 \
-        #         background.drawing=on \
-        #         background.color=0x00C4A7E7 \
-        #         label.color=0xff3B4252 \
-        #         label.font.size=14.0 \
-        #         label="$sid" \
-        #         click_script="/Users/lnk0/.local/bin/aerospace workspace $sid"
-        # done        
-
-        sketchybar --update
-    '';
-  };
-
-  home.file."${config.xdg.configHome}/sketchybar/plugins/aerospace.sh" = {
-    executable = true;
-    text = ''
-      #!/usr/bin/env zsh
-
-      if [ $1 -eq 1 ]; then
-        sketchybar --set "space.1" background.color=0xffC4A7E7 label.color=0xffffffff
-        sketchybar --set "space.2" background.color=0x00C4A7E7 label.color=0xffC4A7E7
-        sketchybar --set "space.3" background.color=0x00C4A7E7 label.color=0xffC4A7E7
-        sketchybar --set "space.4" background.color=0x00C4A7E7 label.color=0xffC4A7E7
-      elif [ $1 -eq 2 ]; then
-        sketchybar --set "space.1" background.color=0x00C4A7E7 label.color=0xffC4A7E7
-        sketchybar --set "space.2" background.color=0xffC4A7E7 label.color=0xffffffff
-        sketchybar --set "space.3" background.color=0x00C4A7E7 label.color=0xffC4A7E7
-        sketchybar --set "space.4" background.color=0x00C4A7E7 label.color=0xffC4A7E7
-      elif [ $1 -eq 3 ]; then
-        sketchybar --set "space.1" background.color=0x00C4A7E7 label.color=0xffC4A7E7
-        sketchybar --set "space.2" background.color=0x00C4A7E7 label.color=0xffC4A7E7
-        sketchybar --set "space.3" background.color=0xffC4A7E7 label.color=0xffffffff
-        sketchybar --set "space.4" background.color=0x00C4A7E7 label.color=0xffC4A7E7
-      else
-        sketchybar --set "space.1" background.color=0x00C4A7E7 label.color=0xffC4A7E7
-        sketchybar --set "space.2" background.color=0x00C4A7E7 label.color=0xffC4A7E7
-        sketchybar --set "space.3" background.color=0x00C4A7E7 label.color=0xffC4A7E7
-        sketchybar --set "space.4" background.color=0xffC4A7E7 label.color=0xffffffff
-      fi
     '';
   };
 }
