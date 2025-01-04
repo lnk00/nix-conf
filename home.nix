@@ -28,6 +28,7 @@
     flyctl
     aichat
     pipx
+    zellij
 
     # Tui
     gitui
@@ -164,6 +165,9 @@
  
     shellAliases = {
       ff = "yazi .";
+      za = "zellij a";
+      zk = "zellij delete-all-sessions -y";
+      zl = "zellij list-sessions";
     };
 
     localVariables = {};
@@ -181,6 +185,35 @@
       window-padding-x = 12
       window-padding-y = 12
       cursor-style = block
+    '';
+  };
+
+  home.file."${config.xdg.configHome}/zellij/config.kdl" = {
+    text = ''
+      themes {
+      	rose-pine {
+      		bg "#403d52"
+      		fg "#e0def4"
+      		red "#eb6f92"
+      		green "#31748f"
+      		blue "#9ccfd8"
+      		yellow "#f6c177"
+      		magenta "#c4a7e7"
+      		orange "#fe640b"
+      		cyan "#ebbcba"
+      		black "#26233a"
+      		white "#e0def4"
+      	}
+      }
+
+      plugins {
+        compact-bar location="zellij:compact-bar"
+      }
+
+      theme "rose-pine"
+      simplified_ui true
+      pane_frames false
+      default_layout "compact"
     '';
   };
 
