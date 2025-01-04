@@ -23,13 +23,18 @@
 
       homebrew = {
         enable = true;
+        onActivation = {
+          # autoUpdate = true;
+          # cleanup = "uninstall";
+          # upgrade = true;
+        };
         casks = [
           "font-geist"
           "font-geist-mono-nerd-font"
           "font-hack-nerd-font"
           "font-sf-pro"
           "sf-symbols"
-          "wezterm"
+          "ghostty"
           "nikitabobko/tap/aerospace"
           "raycast"
           "microsoft-teams"

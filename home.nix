@@ -170,11 +170,18 @@
   };
 
 
-  programs.wezterm = {
-    enable = true;
-    enableZshIntegration = true;
-    enableBashIntegration = true;
-    extraConfig = builtins.readFile "${config.xdg.configHome}/nix-darwin/config_files/wezterm.lua";
+ 
+  home.file."${config.xdg.configHome}/ghostty/config" = {
+    text = ''
+      theme = rose-pine
+      macos-titlebar-style = hidden
+      font-family = "GeistMono Nerd Font Mono"
+      font-size = 15
+      font-thicken = true
+      window-padding-x = 12
+      window-padding-y = 12
+      cursor-style = block
+    '';
   };
 
 
