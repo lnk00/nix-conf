@@ -2,7 +2,7 @@
   description = "Example Darwin system flake";
 
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-24.11-darwin";
     nix-darwin.url = "github:LnL7/nix-darwin";
     nix-darwin.inputs.nixpkgs.follows = "nixpkgs";
     home-manager.url = "github:nix-community/home-manager";
@@ -76,7 +76,7 @@
       programs.zsh.enable = true;
 
       environment.shellAliases = {
-        nxsource = "darwin-rebuild switch --flake ~/.config/nix-darwin --impure && sketchybar --reload ~/.config/sketchybar/sketchybarrc";
+        nxsource = "darwin-rebuild switch --flake ~/.config/nix-darwin --impure";
         nxconf = "hx ~/.config/nix-darwin/flake.nix";
         nxpush = "cd ~/.config/nix-darwin && git add . && git commit -m 'update' && git push";
         hmconf = "hx ~/.config/nix-darwin/home.nix";

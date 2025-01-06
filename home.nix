@@ -21,7 +21,6 @@
     httpie
     jq
     thefuck
-    bitwarden-cli
     jankyborders
     oh-my-posh
     exercism
@@ -63,7 +62,7 @@
 
     #Elixir
     erlang
-    elixir
+    elixir_1_18
     elixir-ls
   ];
 
@@ -214,6 +213,15 @@
       simplified_ui true
       pane_frames false
       default_layout "compact"
+
+      keybinds {
+        normal {
+          bind "Ctrl 1" { GoToTab 1; SwitchToMode "Normal"; }
+          bind "Ctrl 2" { GoToTab 2; SwitchToMode "Normal"; }
+          bind "Ctrl 3" { SwitchToMode "Tab"; GoToTab 3; SwitchToMode "Normal"; }
+          bind "Ctrl 4" { GoToTab 4; SwitchToMode "Normal"; }
+        }
+      }
     '';
   };
 
