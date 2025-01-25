@@ -45,6 +45,7 @@
           "linearmouse"
           "proxyman"
           "zed"
+          "google-chrome"
           "timemator"
         ];
       };
