@@ -288,7 +288,7 @@
 
     [language-server.eslint]
     args = ["--stdio"]
-    command = "/Users/lnk0/.yarn/bin/eslint-lsp"
+    command = "vscode-eslint-language-server"
 
     [language-server.vscode-json-language-server.config]
     json = { validate = { enable = true }, format = { enable = true } }
