@@ -27,7 +27,7 @@
           # autoUpdate = true;
           # cleanup = "uninstall";
           # upgrade = true;
-        };
+        };       
         casks = [
           "font-geist"
           "font-geist-mono-nerd-font"

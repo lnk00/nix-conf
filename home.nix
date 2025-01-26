@@ -47,8 +47,10 @@
     nodePackages.typescript
     nodePackages.prettier
     nodePackages.typescript-language-server
-    nodePackages.vscode-langservers-extracted
+    nodePackages.eslint
     nodePackages."@tailwindcss/language-server"
+    
+    vscode-langservers-extracted
 
     # Bun
     bun
@@ -285,23 +287,8 @@
     html-ls = { command = "vscode-html-language-server", args = [ "--stdio" ] }
 
     [language-server.eslint]
-    command = "vscode-eslint-language-server"
     args = ["--stdio"]
-
-    [language-server.eslint.config]
-    codeActionsOnSave = { mode = "all", "source.fixAll.eslint" = true }
-    format = { enable = true }
-    nodePath = ""
-    quiet = false
-    rulesCustomizations = []
-    run = "onType"
-    validate = "on"
-    experimental = {}
-    problems = { shortenToSingleLine = false }
-
-    [language-server.eslint.config.codeAction]
-    disableRuleComment = { enable = true, location = "separateLine" }
-    showDocumentation = { enable = false }
+    command = "vscode-eslint-language-server"
 
     [language-server.vscode-json-language-server.config]
     json = { validate = { enable = true }, format = { enable = true } }
@@ -327,7 +314,7 @@
 
     [[language]]
     name = "javascript"
-    language-servers = [ "typescript-language-server", "eslint"]
+    language-servers = [ "typescript-language-server", "eslint" ]
     formatter = { command = "prettier", args = [ "--parser", "typescript" ] }
     auto-format = true
 
