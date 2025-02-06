@@ -138,7 +138,7 @@
       custom_theme = let
         bg = "transaparent";
       in {
-        "inherits" = "rose_pine";
+        "inherits" = "rose_pine_dawn";
         "ui.background" = { bg = bg; };
         "ui.statusline" = { bg = bg; };
       };
@@ -178,7 +178,7 @@
  
   home.file."${config.xdg.configHome}/ghostty/config" = {
     text = ''
-      theme = rose-pine
+      theme = dark:rose-pine,light:rose-pine-dawn
       macos-titlebar-style = hidden
       font-family = "GeistMono Nerd Font Mono"
       font-size = 15
@@ -193,17 +193,17 @@
     text = ''
       themes {
       	rose-pine {
-      		bg "#403d52"
-      		fg "#e0def4"
-      		red "#eb6f92"
-      		green "#31748f"
-      		blue "#9ccfd8"
-      		yellow "#f6c177"
-      		magenta "#c4a7e7"
+      		bg "#dfdad9"
+      		fg "#575279"
+      		red "#b4637a"
+      		green "#286983"
+      		blue "#56949f"
+      		yellow "#ea9d34"
+      		magenta "#907aa9"
       		orange "#fe640b"
-      		cyan "#ebbcba"
-      		black "#26233a"
-      		white "#e0def4"
+      		cyan "#d7827e"
+      		black "#f2e9e1"
+      		white "#575279"
       	}
       }
 
@@ -302,25 +302,25 @@
 
     [[language]]
     name = "typescript"
-    language-servers = [ "typescript-language-server", "eslint" ]
+    language-servers = [ "typescript-language-server", ]
     formatter = { command = "prettier", args = [ "--parser", "typescript" ] }
     auto-format = true
 
     [[language]]
     name = "tsx"
-    language-servers = [ "typescript-language-server", "eslint", "tailwindcss-ls" ]
+    language-servers = [ "typescript-language-server", "tailwindcss-ls" ]
     formatter = { command = "prettier", args = [ "--parser", "typescript" ] }
     auto-format = true
 
     [[language]]
     name = "javascript"
-    language-servers = [ "typescript-language-server", "eslint" ]
+    language-servers = [ "typescript-language-server", ]
     formatter = { command = "prettier", args = [ "--parser", "typescript" ] }
     auto-format = true
 
     [[language]]
     name = "jsx"
-    language-servers = [ "typescript-language-server", "eslint", "tailwindcss-ls" ]
+    language-servers = [ "typescript-language-server", "tailwindcss-ls" ]
     formatter = { command = "prettier", args = [ "--parser", "typescript" ] }
     auto-format = true
 
