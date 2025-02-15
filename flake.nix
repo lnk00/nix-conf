@@ -23,11 +23,12 @@
 
       homebrew = {
         enable = true;
-        onActivation = {
-          # autoUpdate = true;
-          # cleanup = "uninstall";
-          # upgrade = true;
-        };       
+        # onActivation = {
+        #   autoUpdate = true;
+        #   cleanup = "uninstall";
+        #   upgrade = true;
+        # };
+
         casks = [
           "font-geist"
           "font-geist-mono-nerd-font"

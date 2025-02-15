@@ -28,6 +28,7 @@
     aichat
     pipx
     zellij
+    git-lfs
 
     # Tui
     gitui
@@ -39,7 +40,8 @@
     cocoapods
 
     # Java
-    jdk11
+    jdk17
+
 
     # Nodejs
     nodejs_22
@@ -66,6 +68,7 @@
     erlang
     elixir_1_18
     elixir-ls
+    lexical
   ];
 
   programs.git = {
@@ -272,7 +275,10 @@
       [[on-window-detected]]
       if.app-id = 'com.apple.iphonesimulator'
       run = 'layout floating'
-      
+
+      [[on-window-detected]]
+      if.app-id = 'ai.perplexity.mac'
+      run = 'layout floating'
     '';
   };
 
@@ -281,6 +287,9 @@
     [[grammar]]
     name = "heex"
     source = { git = "https://github.com/phoenixframework/tree-sitter-heex.git" }
+
+    [language-server.lexical]
+    command = "lexical"
     
     [language-server]
     tailwindcss-ls = { command = "tailwindcss-language-server", args = [ "--stdio" ] }
@@ -338,13 +347,13 @@
     [[language]]
     name = "elixir"
     file-types = ["ex", "exs"]
-    language-servers = ["elixir-ls", "tailwindcss-ls", "html-ls"]
+    language-servers = ["lexical", "tailwindcss-ls", "html-ls"]
     auto-format = true
 
     [[language]]
     name = "heex"
     file-types = ["heex", "neex"]
-    language-servers = ["elixir-ls", "html-ls"]
+    language-servers = ["lexical", "html-ls"]
     auto-format = true
     '';
   };
