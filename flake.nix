@@ -48,6 +48,7 @@
           "zed"
           "google-chrome"
           "timemator"
+          "steam"
         ];
       };
 
