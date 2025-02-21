@@ -29,6 +29,7 @@
     pipx
     zellij
     git-lfs
+    mkcert
 
     # Tui
     gitui
