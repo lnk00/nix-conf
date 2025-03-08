@@ -196,7 +196,7 @@
   home.file."${config.xdg.configHome}/zellij/config.kdl" = {
     text = ''
       themes {
-      	rose-pine {
+      	custom {
       		bg "#cecece"
       		fg "#202020"
       		red "#dc3e42"
@@ -206,7 +206,7 @@
       		magenta "#8347b9"
       		orange "#fe640b"
       		cyan "#8347b9"
-      		black "#646464"
+      		black "#202020"
       		white "#fcfcfc"
       	}
       }
@@ -215,7 +215,7 @@
         compact-bar location="zellij:compact-bar"
       }
 
-      theme "rose-pine"
+      theme "custom"
       simplified_ui true
       pane_frames false
       default_layout "compact"
