@@ -206,8 +206,8 @@
       		magenta "#8347b9"
       		orange "#fe640b"
       		cyan "#8347b9"
-      		black "#202020"
-      		white "#fcfcfc"
+      		black "#ffffff"
+      		white "#202020"
       	}
       }
 
