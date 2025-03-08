@@ -2,7 +2,8 @@
   description = "Example Darwin system flake";
 
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-24.11-darwin";
+    # nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-24.11-darwin";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
     nix-darwin.url = "github:LnL7/nix-darwin";
     nix-darwin.inputs.nixpkgs.follows = "nixpkgs";
     home-manager.url = "github:nix-community/home-manager";
@@ -64,7 +65,7 @@
       # nix.package = pkgs.nix;
 
       services.jankyborders.enable = true;
-      services.jankyborders.active_color = "0xFFC4A7E7";
+      services.jankyborders.active_color = "0xFF2b9a66";
       services.jankyborders.inactive_color = "0x00FFFFFF";
       services.jankyborders.hidpi = true;
       services.jankyborders.blur_radius = 5.0;

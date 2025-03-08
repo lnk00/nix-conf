@@ -142,7 +142,7 @@
       custom_theme = let
         bg = "transaparent";
       in {
-        "inherits" = "rose_pine_dawn";
+        "inherits" = "yo_light";
         "ui.background" = { bg = bg; };
         "ui.statusline" = { bg = bg; };
       };
@@ -182,11 +182,11 @@
  
   home.file."${config.xdg.configHome}/ghostty/config" = {
     text = ''
-      theme = dark:rose-pine,light:rose-pine-dawn
+      theme = dark:xcodelight,light:xcodelight
       macos-titlebar-style = hidden
       font-family = "GeistMono Nerd Font Mono"
       font-size = 15
-      font-thicken = true
+      font-thicken = false
       window-padding-x = 12
       window-padding-y = 12
       cursor-style = block
@@ -197,17 +197,17 @@
     text = ''
       themes {
       	rose-pine {
-      		bg "#dfdad9"
-      		fg "#575279"
-      		red "#b4637a"
-      		green "#286983"
-      		blue "#56949f"
-      		yellow "#ea9d34"
-      		magenta "#907aa9"
+      		bg "#cecece"
+      		fg "#202020"
+      		red "#dc3e42"
+      		green "#2b9a66"
+      		blue "#0588f0"
+      		yellow "#957468"
+      		magenta "#8347b9"
       		orange "#fe640b"
-      		cyan "#d7827e"
-      		black "#f2e9e1"
-      		white "#575279"
+      		cyan "#8347b9"
+      		black "#646464"
+      		white "#fcfcfc"
       	}
       }
 

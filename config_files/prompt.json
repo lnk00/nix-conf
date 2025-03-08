@@ -5,8 +5,8 @@
       "alignment": "right",
       "segments": [
         {
-          "background": "#f2e9e1",
-          "foreground": "#575279",
+          "background": "#f0f0f0",
+          "foreground": "#202020",
           "leading_diamond": "\ue0b6",
           "properties": {
             "style": "folder"
@@ -17,8 +17,8 @@
           "type": "path"
         },
         {
-          "background": "#f2e9e1",
-          "foreground": "#9893a5",
+          "background": "#f0f0f0",
+          "foreground": "#2b9a66",
           "leading_diamond": " \ue0b6",
           "properties": {
             "branch_icon": ""
@@ -35,8 +35,8 @@
       "alignment": "left",
       "segments": [
         {
-          "background": "#b4637a",
-          "foreground": "#faf4ed",
+          "background": "#2b9a66",
+          "foreground": "#fcfcfc",
           "leading_diamond": "\ue0b6",
           "style": "diamond",
           "template": "{{ .UserName }} \u2301",
