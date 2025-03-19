@@ -12,6 +12,7 @@
   home.sessionPath = [
     "$HOME/.cargo/bin"
     "$HOME/.local/share/solana/install/active_release/bin"
+    "$HOME/.avm/bin"
   ];
 
 
