@@ -30,6 +30,10 @@
         #   upgrade = true;
         # };
 
+        brews = [
+          "openssl@3"
+        ];
+
         casks = [
           "font-geist"
           "font-geist-mono-nerd-font"

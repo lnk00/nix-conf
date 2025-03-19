@@ -11,7 +11,9 @@
 
   home.sessionPath = [
     "$HOME/.cargo/bin"
+    "$HOME/.local/share/solana/install/active_release/bin"
   ];
+
 
   home.packages = with pkgs; [
     # Utils
